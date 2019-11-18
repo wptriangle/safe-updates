@@ -14,3 +14,9 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+/*
+ * Enqueue CSS and JS assets
+ */
+
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/assets.php';
