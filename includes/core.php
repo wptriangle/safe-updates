@@ -26,3 +26,9 @@ require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/assets.php';
  */
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/commons.php';
+
+/*
+ * Handle core updates
+ */
+
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/updates/core-updates.php';
