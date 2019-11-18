@@ -20,3 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 
 require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/assets.php';
+
+/*
+ * Common functions
+ */
+
+require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/commons.php';
