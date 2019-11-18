@@ -1,6 +1,6 @@
 <?php
 /**
- * Common updates
+ * Common functions
  *
  * @since      1.0
  * @package    Safe Updates
