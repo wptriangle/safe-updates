@@ -29,6 +29,20 @@ function safe_updates_core_updates_display() {
 
                 $target_core_version = $core_update->version;
 
+                /* Display a table of plugins which are not tested with the target core update version */
+
+                $active_theme = wp_get_theme();
+
+                echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="theme-title">' . __( 'Theme Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
+                if ( safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) && safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) != $target_core_version ) {
+                    echo '<tr>';
+                    echo '<td class="theme-title"><strong>' . $active_theme[ 'Name' ] . '</strong></td>';
+                    echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) . '</td>';
+                    echo '<td class="target-core-version">' . $target_core_version . '</td>';
+                    echo '</tr>';
+                }
+                echo '</tbody></table>';
+
                 /* Create an array of activated plugins */
 
                 $active_plugins = get_option( 'active_plugins' );
