@@ -39,16 +39,17 @@ function safe_updates_core_updates_display() {
 
                 /* Display a table of plugins which are not tested with the target core update version */
 
-                echo '<table id="safe-updates-core"><tr><th>Plugin Name</th><th>Tested up to</th></tr>';
+                echo '<table id="safe-updates-core" class="widefat updates-table safe-updates-table"><thead><tr><th class="plugin-title">' . __( 'Plugin Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
                 foreach( $activated_plugins as $activated_plugin ) {
                     if ( safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) != $target_core_version ) {
                         echo '<tr>';
-                        echo '<td>' . $activated_plugin[ 'Name' ] . '</td>';
-                        echo '<td>' . safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) . '</td>';
+                        echo '<td class="plugin-title"><strong>' . $activated_plugin[ 'Name' ] . '</strong></td>';
+                        echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) . '</td>';
+                        echo '<td class="target-core-version">' . $target_core_version . '</td>';
                         echo '</tr>';
                     }
                 }
-                echo '</table>';
+                echo '</tbody></table>';
 			}
         }
 	}

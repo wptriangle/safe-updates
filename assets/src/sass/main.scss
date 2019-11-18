@@ -2,3 +2,16 @@
  * Safe Updates Main SCSS
  *
  */
+
+/* Tested up to - label color */
+
+.safe-updates-table td.tested-up-to {
+
+    &.untested {
+        color: red;
+    }
+
+    &.unknown {
+        color: yellow;
+    }
+}
