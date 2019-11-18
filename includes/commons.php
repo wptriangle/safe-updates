@@ -16,7 +16,7 @@ function safe_updates_tested_up_to( $component, $slug ) {
     if ( $component == 'plugin' ) {
         $component_dir = WP_PLUGIN_DIR;
     } elseif ( $component == 'theme' ) {
-        $component_dir = WP_THEME_DIR;
+        $component_dir = get_theme_root();
     } else {
         return __( 'Component not defined', 'safe-updates' );
     }
@@ -31,6 +31,6 @@ function safe_updates_tested_up_to( $component, $slug ) {
 			)
 		);
 
-		return $component_data[ 'tested_up_to' ];
+		return preg_replace( '/[^0-9.]+/', '', $component_data[ 'tested_up_to' ] );
 	}
 }
