@@ -52,7 +52,7 @@ function safe_updates_core_updates_display() {
                 foreach ( $active_plugins as $active_plugin ) {           
                     if( isset( $all_plugins[ $active_plugin ] ) ){
                         array_push( $activated_plugins, $all_plugins[ $active_plugin ] );
-                    }           
+                    }
                 }
 
                 /* Display a table of plugins which are not tested with the target core update version */
