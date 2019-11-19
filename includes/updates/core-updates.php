@@ -29,19 +29,26 @@ function safe_updates_core_updates_display() {
 
                 $target_core_version = $core_update->version;
 
-                /* Display a table of plugins which are not tested with the target core update version */
-
                 $active_theme = wp_get_theme();
 
-                echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="theme-title">' . __( 'Theme Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
+                /* Start theme display */
+
                 if ( safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) && safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) != $target_core_version ) {
+
+                    echo '<h4>' . __( 'Your active theme is untested with the target WordPress version:' ) . '</h4>';
+
+                    /* Display a table of plugins which are not tested with the target core update version */
+
+                    echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="theme-title">' . __( 'Theme Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
                     echo '<tr>';
                     echo '<td class="theme-title"><strong>' . $active_theme[ 'Name' ] . '</strong></td>';
                     echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) . '</td>';
                     echo '<td class="target-core-version">' . $target_core_version . '</td>';
                     echo '</tr>';
+                    echo '</tbody></table>';
+                } else {
+                    echo '<h4>' . __( 'Your active theme is tested with the target WordPress version.' ) . '</h4>';
                 }
-                echo '</tbody></table>';
 
                 /* Create an array of activated plugins */
 
@@ -65,19 +72,31 @@ function safe_updates_core_updates_display() {
                     }
                 }
 
-                /* Display a table of plugins which are not tested with the target core update version */
+                /* Start plugin display */
 
-                echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="plugin-title">' . __( 'Plugin Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
-                foreach( $untested_plugins as $untested_plugin ) {
-                    if ( safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) != $target_core_version ) {
-                        echo '<tr>';
-                        echo '<td class="plugin-title"><strong>' . $untested_plugin[ 'Name' ] . '</strong></td>';
-                        echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) . '</td>';
-                        echo '<td class="target-core-version">' . $target_core_version . '</td>';
-                        echo '</tr>';
+                if ( $untested_plugins ) {
+                    if (  count( $untested_plugins ) <= 1 ) {
+                        echo '<h4>' . __( 'You have a plugin that is untested with the target WordPress version:' ) . '</h4>';
+                    } elseif (  count( $untested_plugins ) > 1 ) {
+                        echo '<h4>' . __( 'You have plugins that are untested with the target WordPress version:' ) . '</h4>';
+                    } else {
+                        echo '<h4>' . __( 'All your plugins are tested with the target WordPress version.' ) . '</h4>';
                     }
+
+                    /* Display a table of plugins which are not tested with the target core update version */
+
+                    echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="plugin-title">' . __( 'Plugin Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
+                    foreach( $untested_plugins as $untested_plugin ) {
+                        if ( safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) != $target_core_version ) {
+                            echo '<tr>';
+                            echo '<td class="plugin-title"><strong>' . $untested_plugin[ 'Name' ] . '</strong></td>';
+                            echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) . '</td>';
+                            echo '<td class="target-core-version">' . $target_core_version . '</td>';
+                            echo '</tr>';
+                        }
+                    }
+                    echo '</tbody></table>';
                 }
-                echo '</tbody></table>';
 			}
         }
 
