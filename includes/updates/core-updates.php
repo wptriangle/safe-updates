@@ -55,14 +55,24 @@ function safe_updates_core_updates_display() {
                     }
                 }
 
+                /* Create an array of untested plugins */
+
+                $untested_plugins = array();
+
+                foreach( $activated_plugins as $activated_plugin ) {
+                    if ( safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) != $target_core_version ) {
+                        array_push( $untested_plugins, $activated_plugin );
+                    }
+                }
+
                 /* Display a table of plugins which are not tested with the target core update version */
 
                 echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="plugin-title">' . __( 'Plugin Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
-                foreach( $activated_plugins as $activated_plugin ) {
-                    if ( safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) != $target_core_version ) {
+                foreach( $untested_plugins as $untested_plugin ) {
+                    if ( safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) != $target_core_version ) {
                         echo '<tr>';
-                        echo '<td class="plugin-title"><strong>' . $activated_plugin[ 'Name' ] . '</strong></td>';
-                        echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) . '</td>';
+                        echo '<td class="plugin-title"><strong>' . $untested_plugin[ 'Name' ] . '</strong></td>';
+                        echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) . '</td>';
                         echo '<td class="target-core-version">' . $target_core_version . '</td>';
                         echo '</tr>';
                     }
