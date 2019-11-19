@@ -3,6 +3,14 @@
  *
  */
 
+
+/* Fontawesome SCSS */
+
+$fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
 /* Tested up to - label color */
 
 .safe-updates-table td.tested-up-to {
@@ -13,5 +21,283 @@
 
     &.unknown {
         color: yellow;
+    }
+}
+
+/* Common Styles */
+
+.safe-updates-actions-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.safe-updates-actions-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.safe-updates-tag {
+    cursor: default;
+    display: inline-block;
+    margin: 0 3px;
+    padding: 0 16px;
+    border: 2px solid transparent;
+    border-radius: 13px;
+    background-color: #f2f2f2;
+    color: #333;
+    font: 500 12px/22px Roboto, Arial, sans-serif;
+    letter-spacing: -.25px;
+    text-align: center;
+    font-weight: bold;
+
+    &.safe-updates-tag-warning {
+        background-color: #fecf2f;
+        color: #333;
+    }
+}
+
+/* Safe Updates Box */
+
+.safe-updates-box {
+    min-height: 20px;
+    position: relative;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 0 #e6e6e6;
+    box-shadow: 0 2px 0 #e6e6e6;
+
+    .safe-updates-box-header {
+        border-bottom: 1px solid #e6e6e6;
+        padding: 15px 30px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        @media only screen and ( max-width: 767px ) {
+            padding: 15px 20px;
+        }
+
+        & > h3.safe-updates-box-title {
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            color: #333;
+            font: 700 15px/30px Roboto, Arial, sans-serif;
+            text-transform: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            & > i {
+                line-height: 30px;
+            }
+        }
+    }
+
+    .safe-updates-box-body {
+
+        @media only screen and ( max-width: 767px ) {
+            padding: 20px;
+        }
+
+        @media only screen and ( min-width: 767px ) {
+            padding: 30px;
+        }
+    }
+
+    .safe-updates-box-footer {
+        border-top: 1px solid #e6e6e6;
+        padding: 30px;
+        display: flex;
+        align-items: center;
+
+        @media only screen and ( max-width: 767px ) {
+            padding: 20px;
+        }
+    }
+}
+
+/* Safe Updates Accordion */
+
+#safe-updates-accordion {
+
+    .collapse:not( .show ) {
+        display: none;
+    }
+
+    .card {
+        padding: 0;
+        min-width: 0;
+        max-width: none;
+        border: 1px solid #e6e6e6;
+        border-left: 2px solid #1abc9c;
+        margin: 0;
+        border-radius: 4px;
+
+        &:not( :first-child ) {
+            margin: 20px 0 0 0;
+        }
+
+        .card-header {
+            position: relative;
+            display: block;
+            padding: 15px 20px 15px 50px;
+            background-color: #fff;
+            color: #000;
+
+            p {
+                margin: 5.5px 0;
+                color: #000;
+
+                &:before {
+                    content: "\F058";
+                    font-family: 'Font Awesome 5 Free';
+                    font-size: 1em;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    text-rendering: auto;
+                    display: inline-block;
+                    color: #888;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    position: absolute;
+                    color: #888;
+                    font-size: 16px;
+                    top: 22px;
+                    left: 22px;
+                    color: #1abc9c;
+                }
+            }
+        }
+
+        &.untested {
+            border-left-color: #ff6d6d;
+
+            .card-header {
+
+                &:hover,
+                &:focus {
+                    cursor: pointer;
+                    background-color: #f8f8f8;
+                }
+
+                p {
+    
+                    &:before {
+                        content: "\F06A";
+                        color: #ff6d6d;
+                    }
+                }
+
+                &[aria-expanded="true"] {
+                    background-color: #f8f8f8;
+                }
+            }
+
+            .collapse {
+                background-color: #f8f8f8;
+                padding: 0 29px 29px;
+
+                .safe-updates-box-body {
+                    background: #fff;
+                }
+            }
+        }
+    }
+}
+
+/* Safe Updates Table */
+
+.safe-updates-table {
+    width: 100%;
+    table-layout: fixed;
+    margin: 20px 0;
+    border-collapse: unset;
+    border-spacing: unset;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    color: #666;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: -.25px;
+
+    thead {
+
+        th {
+            color: #333;
+            text-align: left;
+            height: 40px;
+            vertical-align: middle;
+            padding: 5px 9px;
+            border: 0;
+            border-bottom: 1px solid #e6e6e6;
+            height: 60px;
+            padding-right: 14px;
+            padding-left: 14px;
+            font-weight: 700;
+            white-space: nowrap;
+
+            &:first-child {
+                padding-left: 29px;
+            }
+
+            &:last-child {
+                padding-right: 29px;
+            }
+        }
+    }
+
+    tbody {
+
+        tr {
+
+            td {
+                color: #333;
+                text-align: left;
+                height: 40px;
+                vertical-align: middle;
+                padding: 5px 9px;
+                border: 0;
+                border-bottom: 1px solid #e6e6e6;
+                height: 60px;
+                padding-right: 14px;
+                padding-left: 14px;
+
+                &:first-child {
+                    padding-left: 29px;
+                    border-left: 2px solid #ff6d6d;
+                    font-weight: 700;
+                }
+
+                &:last-child {
+                    padding-right: 29px;
+                }
+
+                i {
+                    font-size: 16px;
+                    color: #ff6d6d;
+                    margin-right: 5px;
+                }
+            }
+        }
     }
 }
