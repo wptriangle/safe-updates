@@ -79,6 +79,10 @@ You can sponsor this project and support my open-source development by [becoming
 
 Definitely! Safe Updates is free and always will be.
 
+== Screenshots ==
+
+1. The Safe Updates interface.
+
 == Changelog ==
 
 = 1.0 =
