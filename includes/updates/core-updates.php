@@ -70,7 +70,12 @@ function safe_updates_core_updates_display() {
 						<div class="safe-updates-actions-left">
 							<span class="safe-updates-tag safe-updates-tag-warning">+1</span>
 						</div>
-						<div class="safe-updates-actions-right"></div>
+						<div class="safe-updates-actions-right">
+                            <?php
+                                $plugin_data = get_plugin_data( WP_PLUGIN_DIR . '/safe-updates/safe-updates.php' );
+                            ?>
+                            <span class="plugin-version"><?php echo __( 'v', 'safe-updates' ) . $plugin_data[ 'Version' ]; ?></span>
+                        </div>
 					</div>
 
 					<div class="safe-updates-box-body">
