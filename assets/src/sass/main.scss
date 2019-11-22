@@ -11,19 +11,6 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
 @import "@fortawesome/fontawesome-free/scss/brands.scss";
 
-/* Tested up to - label color */
-
-.safe-updates-table td.tested-up-to {
-
-    &.untested {
-        color: red;
-    }
-
-    &.unknown {
-        color: yellow;
-    }
-}
-
 /* Common Styles */
 
 .safe-updates-actions-left {
@@ -263,6 +250,11 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
             &:last-child {
                 padding-right: 29px;
             }
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                text-align: center;
+            }
         }
     }
 
@@ -296,6 +288,11 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
                     font-size: 16px;
                     color: #ff6d6d;
                     margin-right: 5px;
+                }
+
+                &:nth-child(2),
+                &:nth-child(3) {
+                    text-align: center;
                 }
             }
         }
