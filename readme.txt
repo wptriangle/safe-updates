@@ -9,7 +9,7 @@ Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Make sure your theme and plugins are tested before updating WordPress
+Make sure your theme and plugins are tested before updating WordPress.
 
 == Backstory ==
 
