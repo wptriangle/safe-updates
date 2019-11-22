@@ -33,3 +33,8 @@ Some notes to consider while using this plugin:
 3. Click on the **"Upload Plugin"** button.
 4. Upload the downloaded *.zip* file.
 5. Activate it.
+
+### Usage
+1. Install and activate the plugin
+2. Go to *WP Admin → Dashboard → Updates*.
+3. If a WordPress update is available, this plugin will add an interface above the **"Update"** button which shows if any of your theme or plugins have not been tested with the target WordPress version.
