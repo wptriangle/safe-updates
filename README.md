@@ -45,6 +45,9 @@ If the above usage steps don't answer your question(s), if you want to report an
 ### Contribute
 If you want to contribute to the plugin by reporting issues, implementing new features and so on, [here's its development repository on Github](https://github.com/nfmohit-wpmudev/safe-updates).
 
+### Credits
+The interface design of this plugin is heavily inspired by the [Shared UI](https://github.com/wpmudev/shared-ui) from [WPMU DEV](https://premium.wpmudev.org/) (Yes, you got that right! I currently work there, we're a wonderful company and [we're hiring](https://incsub.com/careers/)!)
+
 ### Frequently Asked Questions
 
 **Is this plugin free?**
