@@ -49,3 +49,8 @@ If you want to contribute to the plugin by reporting issues, implementing new fe
 
 **Is this plugin free?**
 Definitely! Safe Updates is free and always will be.
+
+### Changelog
+
+**1.0**
+* Initial Release
