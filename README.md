@@ -7,3 +7,9 @@ Thus, I decided to build ***Safe Updates***, a small nifty WordPress plugin whic
 
 ### Use Cases
 The use case of this plugin is very straight-forward. It just gives you an idea about untested plugins or themes that may be untested with the updated WordPress versions and helps you be cautious for conflicts and errors.
+
+### Core Features
+The core features of this plugin include:
+
+1. Display active plugin(s) that might have not been tested with the target WordPress version.
+2. Show if the current theme has not been tested with the target WordPress version.
