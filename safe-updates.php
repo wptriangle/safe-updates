@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Safe Updates
  * Plugin URI: https://nahid.dev/project/safe-updates
- * Description: Make sure your theme and plugins are tested before updating WordPress
+ * Description: Make sure your theme and plugins are tested before updating WordPress.
  * Author: Nahid Ferdous Mohit
  * Version: 1.0.0
  * Author URI: https://nahid.dev
