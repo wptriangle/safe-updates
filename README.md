@@ -48,6 +48,9 @@ If you want to contribute to the plugin by reporting issues, implementing new fe
 ### Credits
 The interface design of this plugin is heavily inspired by the [Shared UI](https://github.com/wpmudev/shared-ui) from [WPMU DEV](https://premium.wpmudev.org/) (Yes, you got that right! I currently work there, we're a wonderful company and [we're hiring](https://incsub.com/careers/)!)
 
+### Sponsor
+You can sponsor this project and support my open-source development by [becoming a Patron](https://www.patreon.com/nfmohit)!
+
 ### Frequently Asked Questions
 
 **Is this plugin free?**
