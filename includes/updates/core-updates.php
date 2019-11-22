@@ -61,51 +61,6 @@ function safe_updates_core_updates_display() {
                     }
                 }
 
-                /* Start theme display */
-
-                if ( $untested_theme ) {
-
-                    echo '<h4>' . __( 'Your active theme is untested with the target WordPress version:' ) . '</h4>';
-
-                    /* Display a table of plugins which are not tested with the target core update version */
-
-                    echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="theme-title">' . __( 'Theme Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
-                    echo '<tr>';
-                    echo '<td class="theme-title"><strong>' . $active_theme[ 'Name' ] . '</strong></td>';
-                    echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) . '</td>';
-                    echo '<td class="target-core-version">' . $target_core_version . '</td>';
-                    echo '</tr>';
-                    echo '</tbody></table>';
-                } else {
-                    echo '<h4>' . __( 'Your active theme is tested with the target WordPress version.' ) . '</h4>';
-                }
-
-                /* Start plugin display */
-
-                if ( $untested_plugins ) {
-                    if (  count( $untested_plugins ) <= 1 ) {
-                        echo '<h4>' . __( 'You have a plugin that is untested with the target WordPress version:' ) . '</h4>';
-                    } elseif (  count( $untested_plugins ) > 1 ) {
-                        echo '<h4>' . __( 'You have plugins that are untested with the target WordPress version:' ) . '</h4>';
-                    } else {
-                        echo '<h4>' . __( 'All your plugins are tested with the target WordPress version.' ) . '</h4>';
-                    }
-
-                    /* Display a table of plugins which are not tested with the target core update version */
-
-                    echo '<table class="widefat updates-table safe-updates-table"><thead><tr><th class="plugin-title">' . __( 'Plugin Name', 'safe-updates' ) . '</th><th>' . __( 'Tested up to', 'safe-updates' ) . '</th><th>' . __( 'Target core version', 'safe-updates' ) . '</th></tr></thead><tbody>';
-                    foreach( $untested_plugins as $untested_plugin ) {
-                        if ( safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) != $target_core_version ) {
-                            echo '<tr>';
-                            echo '<td class="plugin-title"><strong>' . $untested_plugin[ 'Name' ] . '</strong></td>';
-                            echo '<td class="tested-up-to untested">' . safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ) . '</td>';
-                            echo '<td class="target-core-version">' . $target_core_version . '</td>';
-                            echo '</tr>';
-                        }
-                    }
-                    echo '</tbody></table>';
-                }
-
 				?>
 				
 				<div class="safe-updates-box">
@@ -121,39 +76,111 @@ function safe_updates_core_updates_display() {
 					<div class="safe-updates-box-body">
 						<div class="accordion" id="safe-updates-accordion">
 
-							<div class="card">
-								<div class="card-header" id="headingThemes" data-toggle="collapse" data-target="#collapseThemes" aria-expanded="true" aria-controls="collapseThemes">
-									<p>Your active theme has been tested with the target WordPress version.</p>
-								</div>
-							</div>
+                            <?php
+                                if ( ! $untested_theme && ! $untested_plugins ) {
+                                    ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <p><?php echo __( 'Your active theme and plugins have been tested with the target WordPress version.', 'safe-updates' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
 
-							<div class="card untested">
-								<div class="card-header" id="headingThemes" data-toggle="collapse" data-target="#collapseThemes" aria-expanded="false" aria-controls="collapseThemes">
-									<p>Your active theme has not been tested with the target WordPress version.</p>
-								</div>
+                                if ( $untested_theme ) {
+                                    ?>
+                                    <div class="card untested">
+                                        <div class="card-header" id="headingThemes" data-toggle="collapse" data-target="#collapseThemes" aria-expanded="false" aria-controls="collapseThemes">
+                                            <p><?php echo __( 'Your active theme has not been tested with the target WordPress version.', 'safe-updates' ); ?></p>
+                                        </div>
 
-								<div id="collapseThemes" class="collapse safe-updates-box" aria-labelledby="headingThemes"
-									data-parent="#safe-updates-accordion">
-									<div class="card-body safe-updates-box-body">
-										<table class="safe-updates-table">
-											<thead>
-												<tr>
-													<th><?php echo __( 'Theme Name', 'safe-updates' ); ?></th>
-													<th><?php echo __( 'Tested up to', 'safe-updates' ); ?></th>
-													<th><?php echo __( 'Target WordPress version', 'safe-updates' ); ?></th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Theme</td>
-													<td><i class="fas fa-exclamation-circle"></i> 5.0</td>
-													<td>5.3</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
+                                        <div id="collapseThemes" class="collapse safe-updates-box" aria-labelledby="headingThemes"
+                                            data-parent="#safe-updates-accordion">
+                                            <div class="card-body safe-updates-box-body">
+                                                <table class="safe-updates-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><?php echo __( 'Theme Name', 'safe-updates' ); ?></th>
+                                                            <th><?php echo __( 'Tested up to', 'safe-updates' ); ?></th>
+                                                            <th><?php echo __( 'Target WordPress version', 'safe-updates' ); ?></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><?php echo $active_theme[ 'Name' ]; ?></td>
+                                                            <td><i class="fas fa-exclamation-circle"></i> <?php echo safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ); ?></td>
+                                                            <td><?php echo $target_core_version; ?></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                } elseif ( ! $untested_theme && $untested_plugins ) {
+                                    ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <p><?php echo __( 'Your active theme has been tested with the target WordPress version.', 'safe-updates' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+
+                                if ( $untested_plugins ) {
+                                    ?>
+                                    <div class="card untested">
+                                        <div class="card-header" id="headingPlugins" data-toggle="collapse" data-target="#collapsePlugins" aria-expanded="false" aria-controls="collapsePlugins">
+                                            <p>
+                                                <?php
+                                                    if (  count( $untested_plugins ) <= 1 ) {
+                                                        echo __( 'One of your active plugins has not been tested with the target WordPress version:' );
+                                                    } elseif (  count( $untested_plugins ) > 1 ) {
+                                                        echo __( 'Some of your active plugins have not been tested with the target WordPress version:' );;
+                                                    }
+                                                ?>
+                                            </p>
+                                        </div>
+
+                                        <div id="collapsePlugins" class="collapse safe-updates-box" aria-labelledby="headingPlugins"
+                                            data-parent="#safe-updates-accordion">
+                                            <div class="card-body safe-updates-box-body">
+                                                <table class="safe-updates-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><?php echo __( 'Plugin Name', 'safe-updates' ); ?></th>
+                                                            <th><?php echo __( 'Tested up to', 'safe-updates' ); ?></th>
+                                                            <th><?php echo __( 'Target WordPress version', 'safe-updates' ); ?></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                        foreach( $untested_plugins as $untested_plugin ) {
+                                                            ?>
+                                                            <tr>
+                                                                <td><?php echo $untested_plugin[ 'Name' ]; ?></td>
+                                                                <td><i class="fas fa-exclamation-circle"></i> <?php echo safe_updates_tested_up_to( 'plugin', $untested_plugin[ 'TextDomain' ] ); ?></td>
+                                                                <td><?php echo $target_core_version; ?></td>
+                                                            </tr>
+                                                            <?php
+                                                        }
+                                                        ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php
+                                } elseif ( $untested_theme && ! $untested_plugins ) {
+                                    ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <p><?php echo __( 'Your active plugins have been tested with the target WordPress version.', 'safe-updates' ); ?></p>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                            ?>
 
 						</div>
 					</div>
