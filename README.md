@@ -41,3 +41,11 @@ Some notes to consider while using this plugin:
 
 ### Support
 If the above usage steps don't answer your question(s), if you want to report an issue or if something is not working as expected, please create a topic in the [Support Forum](https://wordpress.org/support/plugin/safe-updates/) or [create an issue on GitHub](https://github.com/nfmohit-wpmudev/safe-updates/issues/new/choose).
+
+### Contribute
+If you want to contribute to the plugin by reporting issues, implementing new features and so on, [here's its development repository on Github](https://github.com/nfmohit-wpmudev/safe-updates).
+
+### Frequently Asked Questions
+
+**Is this plugin free?**
+Definitely! Safe Updates is free and always will be.
