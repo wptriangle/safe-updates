@@ -68,7 +68,11 @@ function safe_updates_core_updates_display() {
 					<div class="safe-updates-box-header">
 						<h3 class="safe-updates-box-title"><?php echo __( 'Safe Updates', 'safe-updates' ); ?></h3>
 						<div class="safe-updates-actions-left">
-							<span class="safe-updates-tag safe-updates-tag-warning">+1</span>
+                            <?php
+                                $theme_count = ( $untested_theme ? 1 : 0 );
+                                $plugin_count= count( $untested_plugins );
+                            ?>
+							<span class="safe-updates-tag safe-updates-tag-warning"><?php echo $theme_count + $plugin_count; ?></span>
 						</div>
 						<div class="safe-updates-actions-right">
                             <?php
