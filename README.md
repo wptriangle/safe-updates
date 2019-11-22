@@ -60,3 +60,8 @@ Definitely! Safe Updates is free and always will be.
 
 **1.0**
 * Initial Release
+
+### Upgrade Notice
+
+**1.0**
+* Initial Release
