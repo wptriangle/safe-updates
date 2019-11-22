@@ -196,6 +196,8 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
             border-left-color: #ff6d6d;
 
             .card-header {
+                display: flex;
+                justify-content: space-between;
 
                 &:hover,
                 &:focus {
@@ -213,6 +215,24 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
 
                 &[aria-expanded="true"] {
                     background-color: #f8f8f8;
+                }
+
+                .open-card {
+                    align-self: center;
+                    border: none;
+                    background-color: transparent;
+                    padding: 10px 15px;
+                    font-size: 16px;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #f2f2f2;
+                        color: #333;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
                 }
             }
 

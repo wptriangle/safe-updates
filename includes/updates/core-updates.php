@@ -101,6 +101,7 @@ function safe_updates_core_updates_display() {
                                     <div class="card untested">
                                         <div class="card-header" id="headingThemes" data-toggle="collapse" data-target="#collapseThemes" aria-expanded="false" aria-controls="collapseThemes">
                                             <p><?php echo __( 'Your active theme has not been tested with the target WordPress version.', 'safe-updates' ); ?></p>
+                                            <button class="open-card"><i class="fas fa-angle-down"></i></button>
                                         </div>
 
                                         <div id="collapseThemes" class="collapse safe-updates-box" aria-labelledby="headingThemes"
@@ -149,6 +150,7 @@ function safe_updates_core_updates_display() {
                                                     }
                                                 ?>
                                             </p>
+                                            <button class="open-card"><i class="fas fa-angle-down"></i></button>
                                         </div>
 
                                         <div id="collapsePlugins" class="collapse safe-updates-box" aria-labelledby="headingPlugins"
