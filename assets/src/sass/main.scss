@@ -106,6 +106,11 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
                 line-height: 30px;
             }
         }
+
+        .plugin-version {
+            font-style: italic;
+            font-size: 10px;
+        }
     }
 
     .safe-updates-box-body {
