@@ -49,9 +49,14 @@ $fa-font-path: "../../../node_modules/@fortawesome/fontawesome-free/webfonts";
     text-align: center;
     font-weight: bold;
 
-    &.safe-updates-tag-warning {
-        background-color: #fecf2f;
-        color: #333;
+    &.safe-updates-tag-success {
+        background-color: #1abc9c;
+        color: #fff;
+    }
+
+    &.safe-updates-tag-error {
+        background-color: #ff6d6d;
+        color: #fff;
     }
 }
 

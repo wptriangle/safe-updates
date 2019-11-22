@@ -72,7 +72,7 @@ function safe_updates_core_updates_display() {
                                 $theme_count = ( $untested_theme ? 1 : 0 );
                                 $plugin_count= count( $untested_plugins );
                             ?>
-							<span class="safe-updates-tag safe-updates-tag-warning"><?php echo $theme_count + $plugin_count; ?></span>
+							<span class="safe-updates-tag <?php echo ( $theme_count + $plugin_count < 1 ? 'safe-updates-tag-success' : 'safe-updates-tag-error' ); ?>"><?php echo $theme_count + $plugin_count; ?></span>
 						</div>
 						<div class="safe-updates-actions-right">
                             <?php
