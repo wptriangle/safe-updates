@@ -38,3 +38,6 @@ Some notes to consider while using this plugin:
 1. Install and activate the plugin
 2. Go to *WP Admin → Dashboard → Updates*.
 3. If a WordPress update is available, this plugin will add an interface above the **"Update"** button which shows if any of your theme or plugins have not been tested with the target WordPress version.
+
+### Support
+If the above usage steps don't answer your question(s), if you want to report an issue or if something is not working as expected, please create a topic in the [Support Forum](https://wordpress.org/support/plugin/safe-updates/) or [create an issue on GitHub](https://github.com/nfmohit-wpmudev/safe-updates/issues/new/choose).
