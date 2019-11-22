@@ -19,3 +19,17 @@ Some notes to consider while using this plugin:
 
 1. The interface only shows up when a core update is available.
 2. A plugin/theme author might choose **not to** disclose the WordPress version up to which it might have been tested up to. In such a case, a plugin/theme might still be incompatible with the targetted update, but ***Safe Updates*** might not show it if its author didn't disclose its tested up to version.
+
+### Installation
+#### Automatic Installation
+1. Go to your *WordPress Dashboard→Plugins→Add New*.
+2. Search for **"Safe Updates"**.
+3. Click on **"Install"**.
+4. Once installed, click on **"Activate"**.
+
+#### Manual Installation
+1. Download the plugin *.zip* folder using the download button on this page.
+2. Go to your *WordPress Dashboard→Plugins→Add New*.
+3. Click on the **"Upload Plugin"** button.
+4. Upload the downloaded *.zip* file.
+5. Activate it.
