@@ -1,6 +1,6 @@
 {
 	"name": "safe-updates",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Make sure your theme and plugins are tested before updating WordPress",
 	"main": "assets/src/js/main.js",
 	"scripts": {

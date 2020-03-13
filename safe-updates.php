@@ -4,7 +4,7 @@
  * Plugin URI: https://nahid.dev/project/safe-updates
  * Description: Make sure your theme and plugins are tested before updating WordPress.
  * Author: Nahid Ferdous Mohit
- * Version: 1.0
+ * Version: 1.0.1
  * Author URI: https://nahid.dev
  * Text Domain: safe-updates
  *
