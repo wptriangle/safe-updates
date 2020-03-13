@@ -25,7 +25,7 @@ function safe_updates_core_updates_display() {
         /* Find the target core update version */
 
 		foreach ( $core_updates as $core_update ) {
-			if ( isset( $core_update->response ) || 'upgrade' == $core_update->response ) {
+			if ( isset( $core_update->response ) && 'upgrade' == $core_update->response ) {
 
                 $target_core_version = $core_update->version;
 
