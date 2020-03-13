@@ -85,10 +85,19 @@ Definitely! Safe Updates is free and always will be.
 
 == Changelog ==
 
+= 1.0.1 =
+* Tested up-to WordPress 5.4
+* Fixed issue which was causing the interface to show up even when an update was not available
+* Updated developer tools
+
 = 1.0 =
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+* Tested up-to WordPress 5.4
+* Fixed issue which was causing the interface to show up even when an update was not available
 
 = 1.0 =
 * Initial Release
