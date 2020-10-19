@@ -4,7 +4,7 @@ Donate link: https://www.patreon.com/nfmohit
 Tags: updates, plugins, themes, safe, secure, test, compatibility, wordpress
 Requires at least: 4.0
 Tested up to: 5.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -85,6 +85,9 @@ Definitely! Safe Updates is free and always will be.
 
 == Changelog ==
 
+= 1.0.2 =
+* Fixed issue where notices were showing up if the component was tested further than the target verison
+
 = 1.0.1 =
 * Tested up-to WordPress 5.4
 * Fixed issue which was causing the interface to show up even when an update was not available
@@ -94,6 +97,9 @@ Definitely! Safe Updates is free and always will be.
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+* Fixed issue where notices were showing up if the component was tested further than the target verison
 
 = 1.0.1 =
 * Tested up-to WordPress 5.4
