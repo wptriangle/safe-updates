@@ -3,7 +3,7 @@ Contributors: nfmohit
 Donate link: https://www.patreon.com/nfmohit
 Tags: updates, plugins, themes, safe, secure, test, compatibility, wordpress
 Requires at least: 4.0
-Tested up to: 5.4
+Tested up to: 5.5
 Stable tag: 1.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -41,10 +41,10 @@ Installation of the **Safe Updates** plugin is very simple. Follow along with th
 3. If a WordPress update is available, this plugin will add an interface above the **"Update"** button which shows if any of your theme or plugins have not been tested with the target WordPress version.
 
 ### Support
-If the above usage steps don't answer your question(s), if you want to report an issue or if something is not working as expected, please create a topic in the [Support Forum](https://wordpress.org/support/plugin/safe-updates/) or [create an issue on GitHub](https://github.com/nfmohit-wpmudev/safe-updates/issues/new/choose).
+If the above usage steps don't answer your question(s), if you want to report an issue or if something is not working as expected, please create a topic in the [Support Forum](https://wordpress.org/support/plugin/safe-updates/) or [create an issue on GitHub](https://github.com/nfmohit/safe-updates/issues/new/choose).
 
 ### Contribute
-If you want to contribute to the plugin by reporting issues, implementing new features and so on, [here's its development repository on Github](https://github.com/nfmohit-wpmudev/safe-updates).
+If you want to contribute to the plugin by reporting issues, implementing new features and so on, [here's its development repository on Github](https://github.com/nfmohit/safe-updates).
 
 ### Credits
 The interface design of this plugin is heavily inspired by the [Shared UI](https://github.com/wpmudev/shared-ui) from [WPMU DEV](https://premium.wpmudev.org/) (Yes, you got that right! I currently work there, we're a wonderful company and [we're hiring](https://incsub.com/careers/)!)
@@ -86,7 +86,7 @@ Definitely! Safe Updates is free and always will be.
 == Changelog ==
 
 = 1.0.2 =
-* Fixed issue where notices were showing up if the component was tested further than the target verison
+* Fixed issue where notices were showing up if the component was tested further than the target version
 
 = 1.0.1 =
 * Tested up-to WordPress 5.4
@@ -99,7 +99,7 @@ Definitely! Safe Updates is free and always will be.
 == Upgrade Notice ==
 
 = 1.0.2 =
-* Fixed issue where notices were showing up if the component was tested further than the target verison
+* Fixed issue where notices were showing up if the component was tested further than the target version
 
 = 1.0.1 =
 * Tested up-to WordPress 5.4
