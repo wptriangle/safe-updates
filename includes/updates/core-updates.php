@@ -33,7 +33,7 @@ function safe_updates_core_updates_display() {
 
                 $active_theme = wp_get_theme();
 
-                if ( safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) && safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) != $target_core_version ) {
+                if ( safe_updates_tested_up_to( 'theme', $active_theme->get( 'TextDomain' ) ) < $target_core_version ) {
                     $untested_theme = true;
                 } else {
                     $untested_theme = false;
@@ -56,7 +56,7 @@ function safe_updates_core_updates_display() {
                 $untested_plugins = array();
 
                 foreach( $activated_plugins as $activated_plugin ) {
-                    if ( safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) && safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) != $target_core_version ) {
+                    if ( safe_updates_tested_up_to( 'plugin', $activated_plugin[ 'TextDomain' ] ) < $target_core_version ) {
                         array_push( $untested_plugins, $activated_plugin );
                     }
                 }
