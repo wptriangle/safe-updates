@@ -86,7 +86,7 @@ Definitely! Safe Updates is free and always will be.
 == Changelog ==
 
 = 1.0.2 =
-* Fixed issue where notices were showing up if the component was tested further than the target verison
+* Fixed issue where notices were showing up if the component was tested further than the target version
 
 = 1.0.1 =
 * Tested up-to WordPress 5.4
@@ -99,7 +99,7 @@ Definitely! Safe Updates is free and always will be.
 == Upgrade Notice ==
 
 = 1.0.2 =
-* Fixed issue where notices were showing up if the component was tested further than the target verison
+* Fixed issue where notices were showing up if the component was tested further than the target version
 
 = 1.0.1 =
 * Tested up-to WordPress 5.4
